@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+}
+
+/*Fonts used
+    font-family: 'Quicksand', sans-serif;
+*/
+
+:root {
+    background-color: var(--background-color);
+    --background-color: #bbbfd3;
+    --wrapper-color: #ffffff;
+    --text-color-main: ;
+    scroll-behavior: smooth;
+}
+
+header {
+    text-align: center;
+    margin: 15px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.wrapper {
+    background-color: var(--wrapper-color);
+    background: linear-gradient(120deg, rgba(255,255,255,1) 0%, rgba(208,208,208,1) 75%, rgba(145,145,145,1) 100%);
+    box-shadow: -7px 5px 15px rgb(120, 114, 140);
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+    padding: 0px 25px;
+    border-radius: 25px;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.city {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.temp {
+    font-weight: 300;
+    font-size: 60px;
+}
+
+.feels-like {
+    line-height: 5px;
+}
+
+.weather-icon img {
+    height: 180px;
+}
