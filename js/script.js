@@ -20,14 +20,26 @@ async function loadWeather(e) {
 }
 
 function getWeather(data){
-    //data output
-    console.log(data);
-
+    //data from openweathermap
     const location = data.name;
     const temp = Math.round(data.main.temp);
     const feelsLike = Math.round(data.main.feels_like);
     const weatherStatus = data.weather[0].main;
     const weatherIcon = data.weather[0].icon;
+
+    //data output
+    const template = `
+    <div class="main-info">
+        <div class="city">${location}</div>
+        <div class="weather">${weatherStatus}</div>
+        <div class="temp">${temp}&#176C</div>
+        <div class="feels-like">Feels like: ${feelsLike}&#176C</div>
+    </div>
+    <div class="weather-icon">
+        <img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="${weatherStatus}">
+    </div>`;
+
+    weatherBlock.innerHTML = template;
 }
 
 if(weatherBlock) {
