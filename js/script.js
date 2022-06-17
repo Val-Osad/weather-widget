@@ -1,12 +1,21 @@
 //weather block
 const weatherBlock = document.querySelector('.wrapper');
+let cityOfChoice = "Kyiv";
+const opt = document.querySelectorAll('.option');
+
+opt.forEach( l => {
+    l.addEventListener('click', () => {
+        cityOfChoice = l.querySelector('label').innerHTML;
+        loadWeather();
+    });
+});
 
 async function loadWeather(e) {
     weatherBlock.innerHTML = `
         <div class="weather-loading">
             <img src="../img/loading.gif" alt="loading...">
         </div>`;
-    const server = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=Kyiv&appid=8c61455f2def13d4de3e7ea20f116876';
+    const server = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${cityOfChoice}&appid=8c61455f2def13d4de3e7ea20f116876`;
     const response = await fetch(server, {
         method: 'GET',
     });
